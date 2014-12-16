@@ -30,7 +30,7 @@ class Server(threading.Thread):
             user_index = randint(0,2)
             input_index = randint(0,2)
             self.file_to_write= open(self.filename, 'w')
-            log_input = self.INPUT[input_index] + self.USER_IDS[user_index] + '\"'
+            log_input = self.INPUT[input_index] + self.USER_IDS[user_index] + '\"' + '\n'
             self.file_to_write.write(log_input)
             self.file_to_write.close()
             print log_input
@@ -47,6 +47,12 @@ s1.start();
 s2.start();
 s3.start();
 s4.start();
+
+
+s1.join();
+s2.join();
+s3.join();
+s4.join();
 
 
 
