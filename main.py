@@ -1,10 +1,11 @@
+#!/usr/bin/pyton 
 '''
 Created on 15 Dec 2014
 
 @author: gustavo
 '''
 
-# /usr/bin/pyton 
+
 
 from parse import Parse
 
