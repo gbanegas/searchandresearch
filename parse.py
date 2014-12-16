@@ -22,5 +22,4 @@ class Parse(object):
         sub = line[location:len(line)].replace('"','')
         user_id = sub.replace(self.USER_ID+"=",'').strip()
         self.mp[user_id].append(Entrace(line))
-        print self.mp 
         
