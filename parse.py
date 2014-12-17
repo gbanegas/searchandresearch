@@ -6,6 +6,7 @@ Created on 15 Dec 2014
 from collections import defaultdict
 from entrace import Entrace
 from saver import Saver
+from server import Server
 
 
 class Parse(object):

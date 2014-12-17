@@ -8,8 +8,8 @@ Created on 15 Dec 2014
 
 
 from parse import Parse
+from listener import Listener
 
 if __name__ == "__main__":
     print 'Creating parse'
-    parse = Parse()
-    parse.parse_file()
+    listener = Listener()
