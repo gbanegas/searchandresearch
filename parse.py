@@ -5,6 +5,8 @@ Created on 15 Dec 2014
 '''
 from collections import defaultdict
 from entrace import Entrace
+from saver import Saver
+
 
 class Parse(object):
     USER_ID = 'userid'
@@ -17,6 +19,7 @@ class Parse(object):
             self.__get_user_id(line)
 
         self.__sorter__()
+        self.__save__()
         #self.__print_entrace__()
             
 
@@ -32,10 +35,12 @@ class Parse(object):
         for obj in self.mp:
             l = self.mp[obj]
             l.sort(cmp=lambda x,y: cmp(x.date, y.date))
-            for i in l:
-                print i.server_entrace
             self.mp[obj] = l
-           
+    
+    def __save__(self):
+        saver = Saver()
+        for obj in self.mp:
+            saver.save_in_file(obj, self.mp[obj])
 
 
     def __print_entrace__(self):
