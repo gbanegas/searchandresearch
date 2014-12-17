@@ -1,6 +1,13 @@
 searchandresearch
 =================
 
+Author
+------
+Gustavo Souza Banegas 
+
+Creation Date: 15/12/2014
+
+
 Pre-requisites
 -----------
 It is necessary to install python >= 2.6
