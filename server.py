@@ -12,7 +12,7 @@ from randomdate import RandomDate
 
 class Server(threading.Thread):
     USER_IDS = ['5352b590-05ac-11e3-9923-c3e7d8408f3a', 'f85f124a-05cd-11e3-8a11-a8206608c529', '5352b590-05cd-11e3-8a11-9923-c3e7d84005cd']
-    INPUT = ['177.126.180.83 - - ',,'127.0.0.1 - - ']
+    INPUT = ['177.126.180.83 - - ','127.0.0.1 - - ', '127.0.180.1 - - ', '200.11.223.83 - - ']
     identificador = 0
     file_to_write = None
     filename = None
@@ -32,7 +32,7 @@ class Server(threading.Thread):
             user_index = randint(0,2)
             input_index = randint(0,2)
             self.file_to_write= open(self.filename, 'w')
-            log_input = self.INPUT[input_index] + r_date.get_random() + ' \"GET /meme.jpg HTTP/1.1\" 200 2148 \"-\"\"userid=' + self.USER_IDS[user_index] + '\"' + '\n'
+            log_input = self.INPUT[input_index] + self.r_date.get_random() + ' \"GET /meme.jpg HTTP/1.1\" 200 2148 \"-\"\"userid=' + self.USER_IDS[user_index] + '\"' + '\n'
             self.file_to_write.write(log_input)
             self.file_to_write.close()
             print log_input
@@ -40,21 +40,7 @@ class Server(threading.Thread):
 
 
 
-s1 = Server(1);
-s2 = Server(2);
-s3 = Server(3);
-s4 = Server(4);
 
-s1.start();
-s2.start();
-s3.start();
-s4.start();
-
-
-s1.join();
-s2.join();
-s3.join();
-s4.join();
 
 
 
