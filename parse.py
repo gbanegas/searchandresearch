@@ -10,9 +10,16 @@ from saver import Saver
 
 class Parse(object):
     USER_ID = 'userid'
-
-    fileToRead = open('entrada.txt', 'r')
+    fileToRead = None
     mp = defaultdict(list)
+
+    def __init__(self,file_to_parse='entrada.txt'):
+        self.fileToRead = open(file_to_parse, 'r')
+
+
+    def set_file_path(self,path):
+        self.fileToRead = open(path, 'r')
+
 
     def parse_file(self):
         for line in self.fileToRead:
