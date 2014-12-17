@@ -14,23 +14,18 @@ from server import Server
 
 if __name__ == "__main__":
     print 'Creating parse'
-    s1 = Server(1)
-    s2 = Server(2)
-    s3 = Server(3)
-    s4 = Server(4)
     listener = Listener()
     listener.start()
-    time.sleep(randint(2,9))
-    s1.start()
-    time.sleep(randint(2,9))
-    s2.start()
-    time.sleep(randint(2,9))
-    s3.start()
-    time.sleep(randint(2,9))
-    s4.start()
-    s1.join()
-    s2.join()
-    s3.join()
-    s4.join()
+    list_of_servers = []
+    for i in xrange(4):
+        list_of_servers.append(Server(i))
+    
+    for s in list_of_servers:
+        s.start()
+        time.sleep(randint(2,9))
+
+    for s in list_of_servers:
+        s.join()
+
     
     
