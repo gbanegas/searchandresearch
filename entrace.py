@@ -21,6 +21,6 @@ class Entrace(object):
 
     def __break__(self):
         match = re.search(r'(\d+/\w+/\d+:\d+:\d+:\d+)',self.server_entrace)
-        date = datetime.datetime.strptime(match.group(0),"%d/%b/%Y:%H:%M:%S")
-        print date
+        self.date = datetime.datetime.strptime(match.group(0),"%d/%b/%Y:%H:%M:%S")
+        
 
